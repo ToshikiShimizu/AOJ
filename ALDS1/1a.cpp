@@ -15,6 +15,7 @@ void show(int A[], int N){
 
 void insertionSort(int A[],int N){
     int v, j;
+    int cnt = 0;
     for (int i=1; i<N; i++){
         v = A[i];
         j = i - 1;
@@ -22,9 +23,12 @@ void insertionSort(int A[],int N){
             A[j+1] = A[j];
             j--;
             A[j+1] = v;
+            cnt++;
         }
         show(A, N);
+        
     }
+    cout << cnt << endl;
 }
 
 int main(){
