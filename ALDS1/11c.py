@@ -18,7 +18,7 @@ def bfs(s):
             if d[v] != INFTY:
                 continue
             d[v] = d[u] + 1
-            q.put(v)
+            q.put(v)#
     
     for i in range(n):
         if d[i]==INFTY:
