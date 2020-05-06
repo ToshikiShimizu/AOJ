@@ -8,7 +8,7 @@ class UnionFind:
         if self.parents[i] == i:
             return i
         else:
-            self.parents[i] = self.find(self.parents[i])
+            self.parents[i] = self.find(self.parents[i]) # 経路圧縮
             return self.parents[i]
 
     def unite(self, i, j):
@@ -35,3 +35,6 @@ if __name__=="__main__":
             uf.unite(i,j)
         else:
             print(int(uf.same(i,j)))
+    print (uf.sizes)
+    print (uf.parents)
+    print (uf.rank)
