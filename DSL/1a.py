@@ -26,15 +26,12 @@ class UnionFind:
     def same(self, i, j):
         return self.find(i)==self.find(j)
 
-if __name__=="__main__":
-    n, Q = map(int,input().split())
-    uf = UnionFind(n)
-    for q in range(Q):
-        cmd, i, j = map(int,input().split())
-        if cmd == 0:
-            uf.unite(i,j)
-        else:
-            print(int(uf.same(i,j)))
-    print (uf.sizes)
-    print (uf.parents)
-    print (uf.rank)
+
+n, q = map(int,input().split())
+uf = UnionFind(n)
+for q in range(q):
+    cmd, i, j = map(int,input().split())
+    if cmd == 0:
+        uf.unite(i,j)
+    else:
+        print(int(uf.same(i,j)))
