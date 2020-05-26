@@ -9,20 +9,15 @@ while(1):
     N = int(input())
     if N==0:
         break
-    A = []
+    A = [0] * 86400
     for n in range(N):
         begin, end = input().split()
         begin = time_to_seconds(begin)
         end = time_to_seconds(end)
-        A.append((begin,1))
-        A.append((end,-1))
-    A.sort()
-    mx = 0
-    cumsum = 0
-    for _, x in A:
-        cumsum += x
-        mx = max(mx, cumsum)
-    ans.append(mx)
+        A[begin] += 1
+        A[end] -= 1
+    cumsum = accumulate(A)
+    ans.append(max(cumsum))
 
 for a in ans:
     print(a)
