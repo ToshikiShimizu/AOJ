@@ -11,13 +11,13 @@ def main():
         if N<=w:
             break
         for n in range(N-w):
-            # dp[n+w] = min(dp[n]+1,dp[n+w])
+            # dp[n+w] = min(dp[n]+1,dp[n+w]) # TLE
             new = dp[n] + 1
             if new < dp[n+w]:
                 dp[n+w] = new
         if w&1==1:
             for n in range(N-w):
-                #dp_odd[n+w] = min(dp_odd[n]+1,dp_odd[n+w])
+                #dp_odd[n+w] = min(dp_odd[n]+1,dp_odd[n+w]) # TLE
                 new = dp_odd[n] + 1
                 if new < dp_odd[n+w]:
                     dp_odd[n+w] = new
@@ -30,5 +30,3 @@ def main():
         print(a,b)
 if __name__ == '__main__':
     main()
-
-
